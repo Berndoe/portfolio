@@ -11,7 +11,7 @@ const Hero = () => {
                 transition={{ duration: 1, ease: 'easeOut' }}
             >
                 <img
-                    src="/Collector Page.png"
+                    src="/images/Collector Page.png"
                     alt="Mobile App Design"
                     className="w-full h-full object-cover rounded-r-lg"
                 />
