@@ -46,7 +46,7 @@ const Hero = () => {
               LinkedIn
             </a>
             <a
-              href="../cv/Bernd_Opoku-Boadu.pdf"
+              href="/images/Bernd_Opoku-Boadu.pdf"
               download
               className="block lg:inline-block bg-indigo-800 text-white px-6 py-2 rounded-full hover:bg-indigo-900 transition-all text-center"
             >
