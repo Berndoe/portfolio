@@ -47,7 +47,7 @@ const Hero = () => {
             </a>
             <a
               href="/images/Bernd_Opoku-Boadu.pdf"
-              download
+              target="_blank"
               className="block lg:inline-block bg-indigo-800 text-white px-6 py-2 rounded-full hover:bg-indigo-900 transition-all text-center"
             >
               Download CV
