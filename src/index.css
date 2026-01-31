@@ -1,3 +1,118 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark-bg text-slate-100 antialiased;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-white;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent;
+  }
+
+  .glow-border {
+    @apply border border-dark-border transition-all duration-300;
+  }
+
+  .glow-border:hover {
+    @apply border-primary/50;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+  }
+
+  .glass {
+    @apply bg-black/80 backdrop-blur-md border-b border-dark-border;
+  }
+
+  .card-dark {
+    @apply bg-dark-surface border border-dark-border rounded-xl transition-all duration-300;
+  }
+
+  .card-dark:hover {
+    @apply bg-dark-surface-hover border-primary/30;
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.1);
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300;
+    @apply bg-gradient-to-r from-cyan-500 to-emerald-500 text-white;
+    @apply hover:shadow-lg hover:shadow-primary/25 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300;
+    @apply border border-primary/50 text-primary;
+    @apply hover:bg-primary/10 hover:border-primary hover:scale-105;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold tracking-tight mb-4;
+  }
+
+  .tech-tag {
+    @apply px-3 py-1 text-xs font-mono rounded-full;
+    @apply bg-primary/10 text-primary border border-primary/20;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-600;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a3a #0a0a0f;
+}
