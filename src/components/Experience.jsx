@@ -3,18 +3,49 @@ import { motion } from "framer-motion";
 const Experience = () => {
   const experiences = [
     {
-      title: "Software Engineer",
-      company: "Axon Information Systems",
-      period: "October 2024 – Present",
+      title: "Quality Assurance Engineer",
+      company: "Salcon (Remote)",
+      period: "October 2025 – Present",
       description:
-        "Designed a user-friendly employee management system and developed APIs. Conducted thorough manual and automated testing for web applications, ensuring high quality standards.",
+          "Designed and executed functional and regression test cases for school management modules including authentication, scheduling, payments, and reporting. " +
+          "Automated repetitive test scenarios, validated APIs using Postman, and used SQL to ensure database integrity. Collaborated in Agile sprints to identify defects early, improving overall system reliability.",
+    },
+    {
+      title: "Software Developer",
+      company: "Axon Information Systems – Accra",
+      period: "October 2024 – August 2025",
+      description:
+          "Built scalable RESTful APIs using .NET and C# for a custom helpdesk platform, improving support operations by 20%." +
+          " Contributed to the development of a GraphQL API for a fintech partner portal and optimized backend architecture with Entity Framework and LINQ.",
     },
     {
       title: "Backend Developer",
-      company: "Jemma Technologies",
-      period: "September 2024 – Present",
+      company: "Kumatech (Remote)",
+      period: "February 2025 – July 2025",
       description:
-        "Designed a robust API for a multitenant application using Django, supporting 20+ users with scalable architecture.",
+          "Designed and implemented HR, Quality Assurance, and Quality Control modules for a pharmaceutical ERP system, focusing on scalability, performance, and maintainable architecture.",
+    },
+    {
+      title: "Backend Developer",
+      company: "Jemma Technologies (Remote)",
+      period: "October 2024 – August 2025",
+      description:
+          "Engineered a high-performance API for a laundry management platform using Django, supporting 100+ concurrent users." +
+          " Reduced response times by 20% through database query optimization and collaborated cross-functionally to deliver production-ready features.",
+    },
+    {
+      title: "Python Tutor",
+      company: "Python Crash Course (Remote)",
+      period: "June 2023 – August 2023",
+      description:
+          "Delivered Python programming instruction to over 20 students, strengthening their problem-solving abilities and foundational software development skills.",
+    },
+    {
+      title: "STEM Tutor",
+      company: "Lesson Up Tutoring – Accra",
+      period: "May 2021 – June 2022",
+      description:
+          "Provided personalized tutoring in Mathematics and Chemistry, helping 70% of students achieve distinctions in their examinations.",
     },
   ];
 

@@ -6,8 +6,8 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       label: "Email",
-      value: "bernd.opoku.boadu@gmail.com",
-      href: "mailto:bernd.opoku.boadu@gmail.com",
+      value: "berndo.dev@gmail.com",
+      href: "mailto:berndo.dev@gmail.com",
     },
     {
       icon: FaLinkedin,
@@ -41,10 +41,10 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let's <span className="gradient-text">Connect</span>
+            Let&#39;s <span className="gradient-text">Connect</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-12">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            I&#39;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
           </p>
         </motion.div>
 
@@ -90,7 +90,7 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <a
-            href="mailto:bernd.opoku.boadu@gmail.com"
+            href="mailto:berndo.dev@gmail.com"
             className="btn-primary inline-flex items-center gap-2 text-lg px-8 py-4"
           >
             <FaEnvelope />
