@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { SiFlutter, SiFlask, SiPhp, SiPython } from "react-icons/si";
+import {SiFlutter, SiFlask, SiPhp, SiPython, SiReact} from "react-icons/si";
+import {TbBrandCSharp} from "react-icons/tb";
 
 const Projects = () => {
   const projects = [
@@ -21,6 +22,15 @@ const Projects = () => {
       icons: [SiPhp],
       link: null,
       github: "https://github.com/Berndoe/techive-ecommerce",
+    },
+    {
+      name: "Autonova",
+      description:
+          "A car management system for families and companies to track their vehicle data in one place.",
+      technologies: ["React", ".NET C#"],
+      icons: [SiReact, TbBrandCSharp],
+      link: null,
+      github: "https://autonovac.vercel.app",
     },
     {
       name: "Inkterpreter",
@@ -59,7 +69,7 @@ const Projects = () => {
           <h2 className="section-title">
             <span className="gradient-text">Featured Projects</span>
           </h2>
-          <p className="text-slate-400">Some things I've built</p>
+          <p className="text-slate-400">Some things I&#39;ve built</p>
         </motion.div>
 
         <motion.div
