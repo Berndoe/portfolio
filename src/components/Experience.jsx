@@ -14,7 +14,7 @@ const experiences = [
     title: "Quality Assurance Engineer",
     company: "Salcon",
     location: "Remote",
-    period: "Oct 2025 – February 2026",
+    period: "Oct 2025 – January 2026",
     description:
       "Designed and executed functional and regression test cases for school management modules including auth, scheduling, payments, and reporting. Automated test scenarios and validated APIs using Postman.",
     highlights: ["Agile sprint collaboration", "API validation with Postman", "SQL database integrity checks"],
