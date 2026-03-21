@@ -2,6 +2,15 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
+    title: "Software Developer",
+    company: "Axon Information Systems",
+    location: "Accra",
+    period: "Oct 2024 – Present",
+    description:
+        "Built scalable RESTful APIs using .NET and C# for a custom helpdesk platform. Contributed to a GraphQL API for a fintech partner portal. Optimized backend architecture with Entity Framework and LINQ.",
+    highlights: ["20% improvement in support operations", "GraphQL API for fintech portal"],
+  },
+  {
     title: "Quality Assurance Engineer",
     company: "Salcon",
     location: "Remote",
@@ -9,15 +18,6 @@ const experiences = [
     description:
       "Designed and executed functional and regression test cases for school management modules including auth, scheduling, payments, and reporting. Automated test scenarios and validated APIs using Postman.",
     highlights: ["Agile sprint collaboration", "API validation with Postman", "SQL database integrity checks"],
-  },
-  {
-    title: "Software Developer",
-    company: "Axon Information Systems",
-    location: "Accra",
-    period: "Oct 2024 – Aug 2025",
-    description:
-      "Built scalable RESTful APIs using .NET and C# for a custom helpdesk platform. Contributed to a GraphQL API for a fintech partner portal. Optimized backend architecture with Entity Framework and LINQ.",
-    highlights: ["20% improvement in support operations", "GraphQL API for fintech portal"],
   },
   {
     title: "Backend Developer",
