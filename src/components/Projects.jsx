@@ -1,162 +1,148 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import {SiFlutter, SiFlask, SiPhp, SiPython, SiReact} from "react-icons/si";
-import {TbBrandCSharp} from "react-icons/tb";
+import { SiFlutter, SiFlask, SiPhp, SiPython, SiReact, SiSvelte } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
+
+const projects = [
+  {
+    name: "DoverColl",
+    description:
+      "Waste management mobile app with an admin web panel for scheduling and tracking collection routes.",
+    technologies: ["Flutter", "Flask", "Python"],
+    icons: [SiFlutter, SiFlask, SiPython],
+    link: null,
+    github: null,
+  },
+  {
+    name: "Techive",
+    description:
+      "E-commerce rental platform for tech products with secure payment flows and inventory management.",
+    technologies: ["PHP", "MySQL", "Bootstrap"],
+    icons: [SiPhp],
+    link: null,
+    github: "https://github.com/Berndoe/techive-ecommerce",
+  },
+  {
+    name: "Autonova",
+    description:
+      "Vehicle management system for families and businesses to track their fleet data in one dashboard.",
+    technologies: ["React", ".NET / C#"],
+    icons: [SiReact, TbBrandCSharp],
+    link: "https://autonovac.vercel.app",
+    github: null,
+  },
+  {
+    name: "Laundre",
+    description:
+      "Laundry operations management system to streamline scheduling, order tracking, and billing.",
+    technologies: ["Svelte", ".NET / C#"],
+    icons: [SiSvelte, TbBrandCSharp],
+    link: "https://laundre.vercel.app",
+    github: null,
+  },
+  {
+    name: "Inkterpreter",
+    description:
+      "Handwritten document reader and summarizer using OCR and NLP — turns scanned notes into structured text.",
+    technologies: ["Flutter", "Python", "ML"],
+    icons: [SiFlutter, SiPython],
+    link: null,
+    github: "https://github.com/dadjepon/Inkterpretor/",
+  },
+];
 
 const Projects = () => {
-  const projects = [
-    {
-      name: "DoverColl",
-      description:
-        "A waste management mobile application with an administrator web app for efficient waste collection scheduling and tracking.",
-      technologies: ["Flutter", "Flask", "Python"],
-      icons: [SiFlutter, SiFlask, SiPython],
-      link: "#",
-      github: null,
-    },
-    {
-      name: "Techive",
-      description:
-        "An e-commerce rental system for tech products with secure payment handling and inventory management.",
-      technologies: ["PHP", "MySQL", "Bootstrap"],
-      icons: [SiPhp],
-      link: null,
-      github: "https://github.com/Berndoe/techive-ecommerce",
-    },
-    {
-      name: "Autonova",
-      description:
-          "A car management system for families and companies to track their vehicle data in one place.",
-      technologies: ["React", ".NET C#"],
-      icons: [SiReact, TbBrandCSharp],
-      link: null,
-      github: "https://autonovac.vercel.app",
-    },
-    {
-      name: "Inkterpreter",
-      description:
-        "A handwritten document reader and text summarizer using OCR technology and natural language processing.",
-      technologies: ["Flutter", "Python", "ML"],
-      icons: [SiFlutter, SiPython],
-      link: null,
-      github: "https://github.com/dadjepon/Inkterpretor/",
-    },
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
-
   return (
-    <section id="projects" className="py-24 bg-dark-bg">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="projects" className="py-28 bg-dark-bg">
+      <div className="max-w-5xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="mb-14"
         >
-          <h2 className="section-title">
-            <span className="gradient-text">Featured Projects</span>
-          </h2>
-          <p className="text-slate-400">Some things I&#39;ve built</p>
+          <p className="text-xs text-zinc-600 font-mono uppercase tracking-widest mb-3">03 / Work</p>
+          <h2 className="section-title">Featured projects</h2>
+          <p className="text-zinc-500 text-sm mt-2">A selection of things I&#39;ve shipped.</p>
         </motion.div>
 
-        <motion.div
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {projects.map((project) => (
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
             <motion.div
               key={project.name}
-              variants={itemVariants}
-              className="group relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="group"
             >
               <div className="card-dark p-6 h-full flex flex-col relative overflow-hidden">
-                {/* Gradient border effect on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10" />
+                {/* Number + Links row */}
+                <div className="flex justify-between items-start mb-5">
+                  <span className="font-mono text-xs text-zinc-700 select-none tabular-nums">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-zinc-600 hover:text-primary transition-colors"
+                        aria-label="GitHub"
+                      >
+                        <FaGithub className="text-base" />
+                      </a>
+                    )}
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-zinc-600 hover:text-primary transition-colors"
+                        aria-label="Live site"
+                      >
+                        <FaExternalLinkAlt className="text-sm" />
+                      </a>
+                    )}
+                  </div>
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Header with icons */}
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex gap-2">
-                      {project.icons.map((Icon, index) => (
-                        <div
-                          key={index}
-                          className="p-2 rounded-lg bg-primary/10 text-primary"
-                        >
-                          <Icon className="text-lg" />
-                        </div>
-                      ))}
+                {/* Tech icons */}
+                <div className="flex gap-2 mb-4">
+                  {project.icons.map((Icon, i) => (
+                    <div
+                      key={i}
+                      className="p-1.5 rounded-md bg-dark-surface-hover border border-dark-border text-zinc-500"
+                    >
+                      <Icon className="text-sm" />
                     </div>
-                    <div className="flex gap-3">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-slate-500 hover:text-primary transition-colors"
-                          aria-label="GitHub"
-                        >
-                          <FaGithub className="text-xl" />
-                        </a>
-                      )}
-                      {project.link && project.link !== "#" && (
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-slate-500 hover:text-primary transition-colors"
-                          aria-label="External Link"
-                        >
-                          <FaExternalLinkAlt className="text-lg" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
+                  ))}
+                </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-slate-100 mb-3 group-hover:text-primary transition-colors">
-                    {project.name}
-                  </h3>
+                {/* Title */}
+                <h3 className="text-base font-semibold text-zinc-100 mb-2 group-hover:text-primary transition-colors duration-200">
+                  {project.name}
+                </h3>
 
-                  {/* Description */}
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-1">
-                    {project.description}
-                  </p>
+                {/* Description */}
+                <p className="text-zinc-500 text-sm leading-relaxed flex-1 mb-5">
+                  {project.description}
+                </p>
 
-                  {/* Tech tags */}
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="tech-tag"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                {/* Tech tags */}
+                <div className="flex flex-wrap gap-1.5 mt-auto">
+                  {project.technologies.map((tech) => (
+                    <span key={tech} className="tech-tag">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

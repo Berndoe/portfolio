@@ -3,132 +3,109 @@ import {
   SiPython, SiNodedotjs, SiReact, SiFlutter,
   SiJavascript, SiPhp, SiMysql, SiGit,
   SiHtml5, SiCss3, SiBootstrap, SiFlask,
-  SiDjango, SiDocker, SiPostgresql, SiTailwindcss
+  SiDjango, SiDocker, SiPostgresql, SiTailwindcss,
+  SiDotnet, SiSvelte
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 
+const skillCategories = [
+  {
+    title: "Frontend",
+    skills: [
+      { name: "React", icon: SiReact },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Svelte", icon: SiSvelte },
+      { name: "Tailwind", icon: SiTailwindcss },
+      { name: "Bootstrap", icon: SiBootstrap },
+      { name: "HTML5", icon: SiHtml5 },
+      { name: "CSS3", icon: SiCss3 },
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      { name: "Python", icon: SiPython },
+      { name: "Django", icon: SiDjango },
+      { name: "Flask", icon: SiFlask },
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: ".NET / C#", icon: SiDotnet },
+      { name: "PHP", icon: SiPhp },
+      { name: "Java", icon: FaJava },
+    ],
+  },
+  {
+    title: "Mobile",
+    skills: [
+      { name: "Flutter", icon: SiFlutter },
+    ],
+  },
+  {
+    title: "Data & Infrastructure",
+    skills: [
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "MySQL", icon: SiMysql },
+      { name: "Git", icon: SiGit },
+      { name: "Docker", icon: SiDocker },
+    ],
+  },
+];
+
+const SkillIcon = ({ skill, delay }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 12 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.35, delay }}
+    whileHover={{ y: -3, transition: { duration: 0.15 } }}
+    className="group flex flex-col items-center gap-2.5 p-4 rounded-lg border border-dark-border hover:border-primary/30 bg-dark-surface hover:bg-dark-surface-hover transition-all duration-200 cursor-default"
+  >
+    <skill.icon className="text-2xl text-zinc-500 group-hover:text-primary transition-colors duration-200" />
+    <span className="text-xs text-zinc-600 group-hover:text-zinc-400 font-mono transition-colors duration-200 text-center leading-tight">
+      {skill.name}
+    </span>
+  </motion.div>
+);
+
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Frontend",
-      skills: [
-        { name: "React", icon: SiReact, level: 85 },
-        { name: "JavaScript", icon: SiJavascript, level: 90 },
-        { name: "HTML5", icon: SiHtml5, level: 95 },
-        { name: "CSS3", icon: SiCss3, level: 90 },
-        { name: "Tailwind", icon: SiTailwindcss, level: 80 },
-        { name: "Bootstrap", icon: SiBootstrap, level: 85 },
-      ]
-    },
-    {
-      title: "Backend",
-      skills: [
-        { name: "Python", icon: SiPython, level: 90 },
-        { name: "Node.js", icon: SiNodedotjs, level: 80 },
-        { name: "Flask", icon: SiFlask, level: 85 },
-        { name: "Django", icon: SiDjango, level: 75 },
-        { name: "PHP", icon: SiPhp, level: 75 },
-        { name: "Java", icon: FaJava, level: 70 },
-      ]
-    },
-    {
-      title: "Mobile",
-      skills: [
-        { name: "Flutter", icon: SiFlutter, level: 85 },
-      ]
-    },
-    {
-      title: "Database & Tools",
-      skills: [
-        { name: "MySQL", icon: SiMysql, level: 85 },
-        { name: "PostgreSQL", icon: SiPostgresql, level: 75 },
-        { name: "Git", icon: SiGit, level: 90 },
-        { name: "Docker", icon: SiDocker, level: 70 },
-      ]
-    }
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
-
   return (
-    <section id="skills" className="py-24 bg-dark-surface">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="skills" className="py-28 bg-dark-surface">
+      <div className="max-w-5xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="mb-14"
         >
-          <h2 className="section-title">
-            <span className="gradient-text">Skills & Technologies</span>
-          </h2>
-          <p className="text-slate-400">Technologies I work with</p>
+          <p className="text-xs text-zinc-600 font-mono uppercase tracking-widest mb-3">02 / Skills</p>
+          <h2 className="section-title">Technology stack</h2>
+          <p className="text-zinc-500 text-sm mt-2">
+            Tools and frameworks I use to build things.
+          </p>
         </motion.div>
 
-        <div className="space-y-12">
-          {skillCategories.map((category, categoryIndex) => (
+        <div className="space-y-10">
+          {skillCategories.map((category, catIndex) => (
             <motion.div
               key={category.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.45, delay: catIndex * 0.08 }}
             >
-              <h3 className="text-lg font-mono text-primary mb-6 flex items-center gap-2">
-                <span className="text-emerald-400">&gt;</span>
+              <h3 className="text-xs font-mono text-zinc-600 uppercase tracking-widest mb-4 flex items-center gap-3">
+                <span className="text-primary">—</span>
                 {category.title}
               </h3>
-
-              <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                {category.skills.map((skill) => (
-                  <motion.div
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-3">
+                {category.skills.map((skill, skillIndex) => (
+                  <SkillIcon
                     key={skill.name}
-                    variants={itemVariants}
-                    className="card-dark p-4 group"
-                  >
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
-                        <skill.icon className="text-xl" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex justify-between items-center mb-1">
-                          <span className="font-medium text-slate-200">{skill.name}</span>
-                          <span className="text-sm text-slate-500 font-mono">{skill.level}%</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Skill bar */}
-                    <div className="h-1.5 bg-dark-border rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-                      />
-                    </div>
-                  </motion.div>
+                    skill={skill}
+                    delay={catIndex * 0.05 + skillIndex * 0.04}
+                  />
                 ))}
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>
