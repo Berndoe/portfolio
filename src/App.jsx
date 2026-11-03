@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronUp } from 'react-icons/fa';
+import { Analytics } from "@vercel/analytics/next";
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -58,6 +59,7 @@ const App = () => {
       <Contact />
       <Footer />
       <ScrollToTop />
+        <Analytics />
     </div>
   );
 };
